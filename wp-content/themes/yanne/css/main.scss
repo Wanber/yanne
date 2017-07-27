@@ -1,0 +1,358 @@
+@font-face {
+  font-family: 'Nanami';
+  src: url('../fonts/Nanami-Thin.otf'); /* IE9 Compat Modes */
+  src: url('../fonts/Nanami-Thin.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/Nanami-Thin.otf') format('truetype') /* Safari, Android, iOS */
+}
+
+.teste {
+  border: 1px solid red;
+}
+
+$cor_principal: #B6912F;
+$cor_secundaria: lighten($cor_principal, 20%);
+
+$cor_texto_prin: rgba(255, 255, 255, 0.85);
+$cor_texto_sec: rgba(0, 0, 0, 0.85);
+
+.row {
+  margin: 0;
+}
+
+body {
+  font-family: Nanami;
+  color: $cor_texto_prin;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+  position: relative;
+  align-content: center;
+  align-items: center;
+
+  .social {
+    padding: 8px;
+    font-size: 0.85rem;
+    font-weight: 100;
+    letter-spacing: .11rem;
+    background: $cor_principal;
+  }
+
+  .logo {
+    width: 100%;
+    padding: 20px;
+
+    img {
+      width: 200px;
+      height: 138px;
+    }
+  }
+
+  nav {
+    position: inherit;
+    z-index: 99999;
+    margin-bottom: -47px;
+    color: $cor_texto_sec;
+
+    &.fix {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+    }
+
+    ul {
+      li {
+        background: white;
+        border: transparent;
+
+        &:first-child {
+          margin-right: -20px;
+          transform: skewX(20deg);
+          -ms-transform: skewX(20deg);
+          -webkit-transform: skewX(20deg);
+          transform-origin: bottom left;
+
+          a {
+            padding-right: 20px;
+            padding-left: 25px;
+            transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg);
+          }
+        }
+
+        &:last-child {
+          margin-left: -20px;
+          transform: skewX(-20deg);
+          -ms-transform: skewX(-20deg);
+          -webkit-transform: skewX(-20deg);
+          transform-origin: bottom left;
+
+          a {
+            padding-left: 20px;
+            padding-right: 25px;
+            transform: skewX(20deg);
+            -ms-transform: skewX(20deg);
+            -webkit-transform: skewX(20deg);
+          }
+        }
+
+        a {
+          color: $cor_texto_sec;
+          font-size: 1.2rem;
+          font-weight: bold;
+
+          &:active, &:visited {
+            color: $cor_texto_sec;
+          }
+
+          &:hover {
+            color: $cor_principal;
+          }
+
+          &.ativo {
+            color: $cor_principal;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider {
+  background: rgba(0, 0, 0, 0.82);
+
+  .ms-nav-next {
+    bottom: 0 !important;
+    width: 60px !important;
+    height: 32px !important;
+    background: url("../img/arrow-dir.png") !important;
+    background-size: 100% 100% !important;
+    left: calc(44% + 60px) !important;
+  }
+  .ms-nav-prev {
+    bottom: 0 !important;
+    width: 60px !important;
+    height: 32px !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.51) !important;
+    background: url("../img/arrow-esq.png") !important;
+    background-size: 100% 100% !important;
+    left: 44% !important;
+  }
+}
+
+section {
+  width: 100%;
+  left: 0;
+  right: 0;
+
+  &.separador {
+    margin: 30px 0 30px 0;
+    height: 300px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .titulo {
+    width: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: $cor_principal;
+    margin: 40px 20px 45px 20px;
+
+    span {
+      position: relative;
+      padding-bottom: 6px;
+      border-bottom: 5px solid $cor_principal;
+    }
+
+    .sep {
+      z-index: -1;
+      margin: auto auto;
+      width: 320px;
+      border-bottom: 3px solid rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  .conteudo {
+    font-size: 1.2rem;
+    color: $cor_texto_sec;
+    font-weight: 300;
+  }
+}
+
+.historia {
+
+  button {
+    margin: 20px 0 0 0;
+    cursor: pointer;
+    color: $cor_principal;
+    border-color: $cor_principal;
+
+    &:hover, &:focus, &:active {
+      color: $cor_texto_prin;
+      outline: none;
+      box-shadow: none;
+      background: $cor_principal;
+      border-color: $cor_principal;
+    }
+  }
+}
+
+.portfolio {
+
+  .portfolio-item {
+    padding: 8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 280px;
+    }
+
+    .titulo {
+      color: $cor_secundaria;
+      font-weight: bold;
+      text-align: left;
+      font-size: 1.5rem;
+      margin: 0 0 6px 0;
+      border-bottom: 3px solid rgba(62, 62, 62, 0.36);
+
+      span {
+        border-bottom: 3px solid $cor_secundaria;
+      }
+    }
+
+    .descricao {
+      text-align: left;
+      color: $cor_texto_sec;
+    }
+  }
+}
+
+.cursos {
+  @extend .portfolio;
+}
+
+.orcamento {
+  background-size: 100% 100%;
+
+  .bg {
+    padding-top: 10px;
+    background-color: transparentize($cor_principal, .25);
+  }
+
+  .titulo {
+    color: $cor_texto_prin;
+
+    span {
+      border-bottom: 5px solid lighten($cor_texto_sec, 20%);
+    }
+
+    .sep {
+      border-bottom: 3px solid rgba(196, 196, 196, 0.35);
+    }
+  }
+
+  .conteudo {
+    color: $cor_texto_prin;
+  }
+
+  form {
+    margin: 30px 0 30px 0;
+
+    input {
+      margin: 8px 0 8px 0;
+
+      &:hover, &:focus {
+        border: 1px solid rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    textarea {
+      padding: 14px;
+    }
+
+    button {
+      cursor: pointer;
+      margin: 20px;
+      background: white;
+    }
+  }
+}
+
+footer {
+  margin-top: -24px;
+  background: black;
+
+  .logo {
+    text-align: center;
+
+    img {
+      width: 320px;
+      height: 250px;
+    }
+  }
+
+  .endereco {
+    margin: 0px 0 26px 0;
+  }
+
+  .newsletter {
+    margin: 0 0 45px 0;
+
+    input {
+      border: 1px solid white;
+
+      &:hover, &:focus {
+        border: 1px solid white;
+      }
+    }
+
+    button {
+      color: $cor_principal;
+      cursor: pointer;
+    }
+  }
+
+  .social {
+    margin: 0 0 25px 0;
+
+    img {
+      width: 65px;
+      height: 65px;
+      cursor: pointer;
+    }
+  }
+
+  .copyright {
+    padding: 20px;
+    color: $cor_principal;
+  }
+}
+
+.single-container {
+  background: rgba(168, 168, 168, 0.24);
+  max-width: 100%;
+  overflow-x: hidden;
+  color: $cor_texto_sec;
+
+  img {
+    max-width: 100%;
+  }
+
+  .row {
+    padding: 65px 0 40px 0;
+  }
+}

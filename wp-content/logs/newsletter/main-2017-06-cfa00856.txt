@@ -1,0 +1,3 @@
+20-06-2017 04:44:32 - ERROR - m: 5,4 MB, u: 0 - Blocked by transient newsletter_main_engine set 35 seconds ago
+20-06-2017 05:16:54 - ERROR - m: 5,4 MB, u: 0 - Blocked by transient newsletter_main_engine set 296 seconds ago
+20-06-2017 05:19:02 - ERROR - m: 5,5 MB, u: 0 - Blocked by transient newsletter_main_engine set 77 seconds ago
